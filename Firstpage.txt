@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select Login Type</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<h1>Select Login Type</h1>
+    <form action="https://sentry.io/answers/">
+      <button type="Employee">Employee Login</button>
+    </form>
+    <form action="CustomerLogin.html">
+      <button type="Customer">Customer Login</button>
+    </form>
+
+</body>
+</html>

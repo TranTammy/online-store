@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enter Customer Info</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<form>
+		<label for="First Name">First Name</label>
+		<input type="text" id="First Name">
+	</form>
+	
+	<form>
+		<label for="Last Name">Last Name</label>
+		<input type="text" id="Last Name">
+	</form>
+	
+	<form>
+		<label for="Address">Address</label>
+		<input type="text" id="Address">
+	</form>
+	
+	<form>
+		<label for="Phone">Phone</label>
+		<input type="text" id="Phone">
+	</form>
+
+	<form>
+		<label for="Email">Email</label>
+		<input type="text" id="Email">
+	</form>
+
+	<form>
+		<label for="Username">Username</label>
+		<input type="text" id="Username">
+	</form>
+
+	<form>
+		<label for="Password">Password</label>
+		<input type="text" id="Password">
+	</form>
+
+	<form>
+		<label for="Credit Card Number">Credit Card Number</label>
+		<input type="text" id="Credit Card Number">
+	</form>
+
+	<form>
+		<label for="Credit Card Exp. Date">Credit Card Exp. Date</label>
+		<input type="text" id="Credit Card Exp. Date">
+	</form>
+
+	<form>
+		<label for="Credit Card Security Number">Credit Card Security Number</label>
+		<input type="text" id="Credit Card Security Number">
+	</form>
+
+	<form action="CustomerLogin.html">
+		<button type="Submit">Submit</button>
+	</form>
+
+</body>
+</html>

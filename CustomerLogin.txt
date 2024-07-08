@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enter Customer Info</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<form>
+		<label for="First Name">First Name</label>
+		<input type="text" id="First Name">
+	</form>
+	
+	<form>
+		<label for="Last Name">Last Name</label>
+		<input type="text" id="Last Name">
+	</form>
+
+	<form action="HomePage.html">
+		<button type="Submit">Submit</button>
+	</form>
+	
+	<form action="CreateNewCustomer.html">
+		<button type="Create New Account">Create New Account</button>
+	</form>
+
+</body>
+</html>
