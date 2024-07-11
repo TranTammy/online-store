@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 </head>
 <body>
+	<h1>Enter Customer Info</h1>
+
 	<form>
 		<label for="First Name">First Name</label>
 		<input type="text" id="First Name">
