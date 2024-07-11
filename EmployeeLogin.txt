@@ -20,9 +20,5 @@
 <button type="Submit">Submit</button>
 </form>
 
-<form action="CreateNewCustomer.html">
-<button type="Create New Account">Create New Account</button>
-</form>
-
 </body>
 </html>
