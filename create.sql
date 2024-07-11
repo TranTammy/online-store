@@ -1,14 +1,14 @@
 USE `your_database_here`;
 
 -- DEPARTMENT TABLE --
-CREATE TABLE IF NOT EXISTS `department` (
+CREATE TABLE `department` (
 	`dept_id` int NOT NULL DEFAULT '0',
 	`dept_name` varchar(15) NOT NULL,
 	PRIMARY KEY (`dept_id`)
 );
 
 -- EMPLOYEE TABLES --
-CREATE TABLE IF NOT EXISTS `employee` (
+CREATE TABLE `employee` (
     `employee_ssn` char(9) NOT NULL DEFAULT '123456789',
 	`first_name` varchar(15) NOT NULL,
 	`last_name` varchar(15) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
 	CONSTRAINT `employee_dept_id` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`) ON DELETE SET DEFAULT ON UPDATE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS `employee_credentials` (
+CREATE TABLE `employee_credentials` (
     `employee_ssn` char(9) NOT NULL DEFAULT '123456789',
     `username` varchar(15) NOT NULL,
 	`password` varchar(15) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `employee_credentials` (
 );
 
 -- CUSTOMER TABLE --
-CREATE TABLE IF NOT EXISTS `customer` (
+CREATE TABLE `customer` (
 	`customer_id` int NOT NULL DEFAULT '0',
 	`first_name` varchar(15) NOT NULL,
 	`last_name` varchar(15) NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
 );
 
 -- PRODUCT TABLE --
-CREATE TABLE IF NOT EXISTS `product` (
+CREATE TABLE `product` (
 	`product_id` int NOT NULL DEFAULT '0',
 	`product_name` varchar(30) NOT NULL,
 	`sell_price` decimal(6,2) DEFAULT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 );
 
 -- CART TABLE --
-CREATE TABLE IF NOT EXISTS `cart` (
+CREATE TABLE `cart` (
 	`customer_id` int NOT NULL DEFAULT '0',
 	`product_id` int NOT NULL DEFAULT '0',
 	`product_name` varchar(30) DEFAULT NULL,
@@ -77,14 +77,14 @@ CREATE TABLE IF NOT EXISTS `cart` (
 );
 
 -- SUPPLIER TABLES --
-CREATE TABLE IF NOT EXISTS `supplier` (
+CREATE TABLE `supplier` (
 	`supplier_id` int NOT NULL DEFAULT '0',
 	`supplier_name` varchar(30) NOT NULL,
 	`buy_price` decimal(10,2) DEFAULT NULL,
 	PRIMARY KEY (`supplier_id`)
 );
 
-CREATE TABLE IF NOT EXISTS `supplier_products` (
+CREATE TABLE `supplier_products` (
 	`supplier_id` int NOT NULL DEFAULT '0',
 	`supplier_product_id` int NOT NULL DEFAULT '0',
 	PRIMARY KEY (`supplier_id`,`supplier_product_id`),
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `supplier_products` (
 	CONSTRAINT `supplied_product_id` FOREIGN KEY (`supplier_product_id`) REFERENCES `product` (`product_id`) ON DELETE SET DEFAULT ON UPDATE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS `supplied_by` (
+CREATE TABLE `supplied_by` (
 	`supplier_id` int NOT NULL DEFAULT '0',
 	`store_product_id` int NOT NULL DEFAULT '0',
 	`product_amount` int NOT NULL,
