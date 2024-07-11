@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Homepage</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<h1>Employee Homepage</h1>
+    <form action="EmployeeRegistration.html">
+      <button type="EmployeeRegistration">EmployeeRegistration</button>
+    </form>
+    <form action="ProductCreation.html">
+      <button type="ProductCreation">Product Creation</button>
+    </form>
+
+</body>
+</html>
