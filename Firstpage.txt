@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Select Login Type</h1>
-    <form action="https://sentry.io/answers/">
+    <form action="EmployeeLogin.html">
       <button type="Employee">Employee Login</button>
     </form>
     <form action="CustomerLogin.html">
