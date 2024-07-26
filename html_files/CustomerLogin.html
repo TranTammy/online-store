@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Customer Login</title>
-<meta charset="UTF-8">
+    <title>Customer Login</title>
+    <meta charset="UTF-8">
 </head>
 <body>
 <h1>Customer Login</h1>
-
-<form action="CustomerLog.php" method="get">
-Username: <input type="text" name="Username"><br>
-Password: <input type="text" name="Password"><br>
- 	  <input type="submit" value="Submit">
+<form action="CustomerLogin.php" method="post">
+    <label for="customer_login_user">Username:</label>
+    <input type="text" id="customer_login_user" name="php_customer_login_user">
+    <br><br>
+    <label for="customer_login_pass">Password:</label>
+    <input type="text" id="customer_login_pass" name="php_customer_login_pass">
+    <br><br>
+    <input type="submit">
 </form>
-
-<form action="CreateNewCustomer.html">
-<button type="Create New Account">Create New Account</button>
+<form action="customer_registration.html">
+    <br>
+    <input type="submit" value="Create New Account">
 </form>
-
 </body>
 </html>
