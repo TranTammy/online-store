@@ -28,8 +28,8 @@
     
     if ($result->num_rows > 0) {
         // Redirect to 'products.php'
-        $uid = $result->fetch_assoc()
-        session_start()
+        $uid = $result->fetch_assoc();
+        session_start();
         $_SESSION['uid']=$uid;
         header("Location: Products.php");
         die();
