@@ -97,10 +97,9 @@
             <?php
                 session_start();
                 if (isset($_SESSION['customer_id']))
-                {
-                    echo "good";
-                    $customer_id=$_SESSION['customer_id'];
-                }
+                   echo $_SESSION['customer_id'];
+                   
+                
                  $conn = new mysqli($servername, $username, $password, $dbname);
                 echo $customer_id
                 if($conn->connect_error){
