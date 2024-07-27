@@ -27,7 +27,7 @@
 
     if ($result->num_rows > 0) {
         // Redirect to 'products.php'
-        header("Products.php");
+        header("Location: Products.php");
         die();
     } else {
         // If MySQL Query Failed -> Print Error
