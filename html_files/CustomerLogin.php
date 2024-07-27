@@ -28,7 +28,7 @@
     
     if ($result->num_rows > 0) {
         // Redirect to 'products.php'
-        $uid = $result + ""
+        $uid = $result->fetch_assoc()
         header("Location: Products.php?uid=$uid");
         die();
     } else {
