@@ -29,7 +29,9 @@
     if ($result->num_rows > 0) {
         // Redirect to 'products.php'
         $uid = $result->fetch_assoc()
-        header("Location: Products.php?uid=$uid");
+        session_start();
+        $_SESSION['uid']=$uid;
+        header("Location: Products.php");
         die();
     } else {
         // If MySQL Query Failed -> Print Error
