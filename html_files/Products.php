@@ -132,7 +132,7 @@
         if($conn->connect_error){
             die("query failed" . $conn->connect_error);
         }
-        $customer_id=$_SESSION['uid'];
+        $customer_id=$SESSION['uid'];
         $total = $conn->query("SELECT SUM(product_cost) as grand_total FROM cart WHERE customer_id = $customer_id");
 
         if($total){
