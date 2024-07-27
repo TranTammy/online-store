@@ -5,8 +5,8 @@
     $address = $_POST['php_customer_address'];
     $phone = $_POST['php_customer_phone'];
     $email = $_POST['php_customer_email'];
-    $username = $_POST['php_customer_user'];
-    $password = $_POST['php_customer_pass'];
+    $inusername = $_POST['php_customer_user'];
+    $inpassword = $_POST['php_customer_pass'];
     $ccn = $_POST['php_customer_ccn'];
     $exp_date = $_POST['php_customer_exp_date'];
     $cvv = $_POST['php_customer_cvv'];
@@ -33,7 +33,7 @@
     // Prepare MySQL Statement
     $sql_statement = $connection->prepare("INSERT INTO customer (customer_id, first_name, last_name, address, phone, email, username, password, cc_no, exp_date, cvv) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $sql_statement->bind_param("isssisssisi", $next_customer_id, $first_name, $last_name, $address, $phone, $email, $username, $password, $ccn, $exp_date, $cvv);
+    $sql_statement->bind_param("isssisssisi", $next_customer_id, $first_name, $last_name, $address, $phone, $email, $inusername, $inpassword, $ccn, $exp_date, $cvv);
 
     // Execute MySQL Statement
     if ($sql_statement->execute()) {
