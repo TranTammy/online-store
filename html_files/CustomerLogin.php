@@ -18,19 +18,18 @@
     }
 
     // Prepare MySQL Statement
-    $sql_stmt = $connection->prepare("SELECT customer_id FROM customer WHERE username = ? AND password = ?");
+    $sql_stmt = $connection->prepare("SELECT * FROM customer WHERE username = ? AND password = ?");
     $sql_stmt->bind_param("ss", $customer_login_user, $customer_login_pass);
     
    
     // Execute MySQL Statement
     $sql_stmt->execute();
     $result = $sql_stmt->get_result();
-    
+        $row = $result->fetch_assoc();
+        $customer_id = $row['customer_id'];
+        $_SESSION['customer_id'] = $customer_id;
     if ($result->num_rows > 0) {
         // Redirect to 'products.php'
-        $uid = $result->fetch_assoc();
-        session_start();
-        $_SESSION['uid']=$uid;
         header("Location: Products.php");
         die();
     } else {
