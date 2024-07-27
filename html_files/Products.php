@@ -163,7 +163,7 @@
             // Close Connection
             $connection->close();
             ?>
-            <form action="../HTML/Checkout.html">
+            <form action="Checkout.html">
                 <input type="submit" value="Checkout">
             </form>
         </div>
