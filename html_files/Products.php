@@ -98,7 +98,7 @@
                 session_start();
                 $customer_id=$_SESSION['customer_id'];
                 $conn = new mysqli($servername, $username, $password, $dbname);
-
+                echo $customer_id
                 if($conn->connect_error){
                     die("query failed" . $conn->connect_error);
                 }
