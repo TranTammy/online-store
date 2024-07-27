@@ -20,6 +20,7 @@
         </thead>
         <tbody>
             <?php
+                $customer_id = $_POST['uid'];
                 $servername = "localhost";
                 $username = "root"; //change to personal mysql username
                 $password = ""; //change to personal mysql password
