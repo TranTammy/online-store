@@ -18,7 +18,7 @@
     }
 
     // Prepare MySQL Statement
-    $sql_stmt = $connection->prepare("SELECT * FROM customer WHERE username = ? AND password = ?");
+    $sql_stmt = $connection->prepare("SELECT customer_id FROM customer WHERE username = ? AND password = ?");
     $sql_stmt->bind_param("ss", $customer_login_user, $customer_login_pass);
     
    
@@ -28,12 +28,8 @@
     
     if ($result->num_rows > 0) {
         // Redirect to 'products.php'
-         $sql_stmt2 = $connection->prepare("SELECT customer_id FROM customer WHERE username = ? AND password = ?");
-         $sql_stmt2->bind_param("ss", $customer_login_user, $customer_login_pass);
-
-        $sql_stmt2->execute();
-        $uid=$sqlstmt2->get_result();
-        header("Location: Products.php?uid=$uid");
+        
+        header("Location: Products.php?uid=$result");
         die();
     } else {
         // If MySQL Query Failed -> Print Error
@@ -48,6 +44,5 @@
         }
         // Close MySQL Statements & Database Connection
         $sql_stmt->close();
-        $sql_stmt2->close();
         $connection->close();
     }
