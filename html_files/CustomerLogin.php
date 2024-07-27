@@ -32,7 +32,7 @@
          $sql_stmt2->bind_param("ss", $customer_login_user, $customer_login_pass);
 
         $sql_stmt2->execute();
-        $uid=$sqlstmt->get_result();
+        $uid=$sqlstmt2->get_result();
         header("Location: Products.php?uid=$uid");
         die();
     } else {
@@ -48,5 +48,6 @@
         }
         // Close MySQL Statements & Database Connection
         $sql_stmt->close();
+        $sql_stmt2->close();
         $connection->close();
     }
