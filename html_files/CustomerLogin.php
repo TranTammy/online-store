@@ -27,7 +27,7 @@
     $result = $sql_stmt->get_result();
         $row = $result->fetch_assoc();
         $customer_id = $row['customer_id'];
-        start_session();
+        session_start();
         $_SESSION['customer_id'] = $customer_id;
     if ($result->num_rows > 0) {
         // Redirect to 'products.php'
