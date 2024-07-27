@@ -28,7 +28,7 @@
     
     if ($result->num_rows > 0) {
         // Redirect to 'products.php'
-        $uid = sprintf("%d", $result); 
+        $uid = $result + ""
         header("Location: Products.php?uid=$uid");
         die();
     } else {
