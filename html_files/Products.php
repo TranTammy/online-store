@@ -25,7 +25,7 @@
                 $password = ""; //change to personal mysql password
                 $dbname = "online store"; //change to mysql database name
 
-                $conn = new mysql("localhost", $username, $password, $dbname);
+                $conn = new mysqli("localhost", $username, $password, $dbname);
 
                 if($conn->connect_error){
                     die("query failed" . $conn->connect_error);
