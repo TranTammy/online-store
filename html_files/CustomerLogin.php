@@ -5,9 +5,9 @@
 
     // Database Information
     $hostname = "localhost";
-    $username = "username";
-    $password = "password";
-    $dbname = "database_name";
+    $username = "root";
+    $password = "";
+    $dbname = "online store";
 
     // Setup MySQL Connection
     $connection = new mysqli($hostname, $username, $password, $dbname);
