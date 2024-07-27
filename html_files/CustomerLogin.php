@@ -28,8 +28,8 @@
     
     if ($result->num_rows > 0) {
         // Redirect to 'products.php'
-        
-        header("Location: Products.php?uid=$result");
+        $uid = sprintf("%d", $result); 
+        header("Location: Products.php?uid=$uid");
         die();
     } else {
         // If MySQL Query Failed -> Print Error
