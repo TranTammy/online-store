@@ -21,9 +21,9 @@
         <tbody>
             <?php
                 $servername = "localhost";
-                $username = "username"; //change to personal mysql username
-                $password = "password"; //change to personal mysql password
-                $dbname = "database_name"; //change to mysql database name
+                $username = "root"; //change to personal mysql username
+                $password = ""; //change to personal mysql password
+                $dbname = "online store"; //change to mysql database name
 
                 $conn = new mysql("localhost", $username, $password, $dbname);
 
