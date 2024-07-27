@@ -135,7 +135,7 @@
         $total = $conn->query("SELECT SUM(product_cost) as grand_total FROM cart WHERE customer_id = $customer_id");
 
         if($total){
-            $row = $result->fetch_assoc();
+            $row = $total->fetch_assoc();
             echo "<h4>" . htmlspecialchars($row['grand_total']) . "</h4>";
         }
 
