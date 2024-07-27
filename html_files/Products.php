@@ -95,8 +95,8 @@
         </thead>
         <tbody>
             <?php
-                $customer_id = 1; //user getter to replace customer id
-
+                session_start();
+                $customer_id=$_SESSION['customer_id'];
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
                 if($conn->connect_error){
@@ -132,7 +132,7 @@
         if($conn->connect_error){
             die("query failed" . $conn->connect_error);
         }
-        $customer_id=$SESSION['uid'];
+        
         $total = $conn->query("SELECT SUM(product_cost) as grand_total FROM cart WHERE customer_id = $customer_id");
 
         if($total){
