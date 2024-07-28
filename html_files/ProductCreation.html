@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Enter Product Info</title>
-	<meta charset="UTF-8">
-</head>
-<body>
-	<h1>Enter Product Info</h1>
- 	<form action="ProductCreate.php" method="get">
-	ProductID: <input type="text" name="ProductID"><br> 
-	Product Name: <input type="text" id="Product Name"><br>
-	Exp_Date: <input type="text" id="Exp_Date"><br>
-	Price:    <input type="text" id="Price"><br>
-	Dept_ID:  <input type="text" id="Department ID"><br>
-	
-	<button type="Submit">Submit</button>
-	</form>
-</body>
+<html lang="en">
+    <head>
+        <title>Create New Product</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Enter Product Info</h1>
+        <form action="../PHP/ProductCreation.php" method="post">
+            <label for="product_id">Product ID:</label>
+            <input type="text" id="product_id" name="php_product_id">
+            <br><br>
+            <label for="product_name">Product Name:</label>
+            <input type="text" id="product_name" name="php_product_name">
+            <br><br>
+            <label for="product_exp_date">Expiration Date:</label>
+            <input type="text" id="product_exp_date" placeholder="YYYY-MM-DD" name="php_product_exp_date">
+            <br><br>
+            <label for="product_sell_price">Price:</label>
+            <input type="text" id="product_sell_price" name="php_product_sell_price">
+            <br><br>
+            <label for="product_dept_id">Department ID:</label>
+            <input type="text" id="product_dept_id" name="php_product_dept_id">
+            <br><br>
+            <input type="submit">
+        </form>
+    </body>
 </html>

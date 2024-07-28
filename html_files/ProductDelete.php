@@ -1,43 +1,40 @@
 <?php
-// Database connection details
-$servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$dbname = "your_database_name";
+    // Database connection details
+    $servername = "localhost";
+    $username = "root";
+    $password = "Evergreen6167!";
+    $dbname = "cs4347_project";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-if (isset($_GET['ProductID'])) {
-    $productID = $_GET['ProductID'];
+    if (isset($_POST['php_delete_product_id'])) {
+        $product_id = $_POST['php_delete_product_id'];
 
-    // Validate that ProductID is not empty and is numeric
-    if (!empty($productID) && is_numeric($productID)) {
         // Prepare the SQL statement
-        $stmt = $conn->prepare("DELETE FROM products WHERE ProductID = ?");
-        $stmt->bind_param("i", $productID);
+        $stmt = $conn->prepare("DELETE FROM product WHERE product_id = ?");
+        $stmt->bind_param("i", $product_id);
 
         // Execute the statement
         if ($stmt->execute()) {
-            echo "Product with ID $productID has been deleted successfully.";
+            header('Location: ../HTML/EmployeeHomepage.html');
         } else {
-            echo "Error deleting product: " . $stmt->error;
+            if ($stmt->error) {
+                echo "Error: " . $stmt->error;
+            } else {
+                header("Location: ProductDelete.html?error=Invalid_ProductID");
+                die();
+            }
         }
-
         // Close the statement
         $stmt->close();
     } else {
-        echo "Invalid ProductID. Please enter a valid numeric ProductID.";
+        echo "ProductID is null.";
     }
-} else {
-    echo "ProductID not provided.";
-}
-
-// Close the connection
-$conn->close();
-?>
+    // Close the connection
+    $conn->close();

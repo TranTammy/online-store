@@ -1,36 +1,41 @@
 <?php
+    // Get Product Data
+    $product_id = $_POST['php_product_id'];
+    $product_name = $_POST['php_product_name'];
+    $exp_date = $_POST['php_product_exp_date'];
+    $sell_price = $_POST['php_product_sell_price'];
+    $dept_id = $_POST['php_product_dept_id'];
+    // Database Information
+    $servername = "localhost";
+    $username = "root";
+    $password = "Evergreen6167!";
+    $dbname = "cs4347_project";
+    // Setup MySQL Connection
+    $connection = new mysqli($servername, $username, $password, $dbname);
+    // Check Connection
+    if($connection->connect_error){
+        die("Connection Failed: " . $connection->connect_error);
+    }
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-	$productID = $_POST['ProductID'];
-	$productName = $_POST['ProductName'];
-	$expDate = $_POST['Exp_Date'];
-	$price = $_POST['Price'];
-	$deptID = $_POST['Dept_ID'];
+    $create_product_sql_stmt = $connection->prepare("INSERT INTO product (product_id, product_name, sell_price, exp_date, dept_id)
+        VALUES (?, ?, ?, ?, ?)");
+    $create_product_sql_stmt->bind_param("isdsi", $product_id, $product_name, $sell_price, $exp_date, $dept_id);
 
-	$servername = "localhost";
-	$username = "root"
-	$password = "";
-	$dbname = "online store";
+    if($create_product_sql_stmt->execute()){
+        header("Location: ../HTML/EmployeeHomepage.html");
+        die();
+    } else {
+        // If MySQL Query Failed -> Print Error
+        if ($create_product_sql_stmt->error) {
+            echo "Error: " . $create_product_sql_stmt->error;
+        }
+        // Else -> Invalid Form Data
+        else {
+            header("Location: ProductCreation.html?error=Invalid_Data");
+            die();
+        }
+    }
+    // Close MySQL Statement and Database Connection
+    $create_product_sql_stmt->close();
+    $connection->close();
 
-	$conn = new mysqli($servername, $username, $password, $dbname);
-
-	if($conn->connect_error){
-		die("query failed" . $conn->connect_error);
-	}
-
-	$stmt = $conn->prepare("INSERT INTO product (product_id, product_name, exp_date, sell_price, dept_id) VALUES (?, ?, ?, ?, ?");
-	$stmt->bind_param("issdi", $productID, $productName, $expDate, $price, $deptID);
-
-	if($stmt->execute()){
-		header("Location: EmployeeHomepage.html");
-		die();
-	}
-	else{
-		header("Location: ProductCreation.html?error=Invalid_Date");
-		die();
-	}
-
-	$stmt->close();
-	$conn->close();
-}
-?>
