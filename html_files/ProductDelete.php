@@ -2,8 +2,8 @@
     // Database connection details
     $servername = "localhost";
     $username = "root";
-    $password = "Evergreen6167!";
-    $dbname = "cs4347_project";
+    $password = "";
+    $dbname = "online store";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -22,7 +22,7 @@
 
         // Execute the statement
         if ($stmt->execute()) {
-            header('Location: ../HTML/EmployeeHomepage.html');
+            header('Location: EmployeeHomepage.html');
         } else {
             if ($stmt->error) {
                 echo "Error: " . $stmt->error;
