@@ -8,8 +8,8 @@
     // Database Information
     $servername = "localhost";
     $username = "root";
-    $password = "Evergreen6167!";
-    $dbname = "cs4347_project";
+    $password = "";
+    $dbname = "online store";
     // Setup MySQL Connection
     $connection = new mysqli($servername, $username, $password, $dbname);
     // Check Connection
@@ -22,7 +22,7 @@
     $create_product_sql_stmt->bind_param("isdsi", $product_id, $product_name, $sell_price, $exp_date, $dept_id);
 
     if($create_product_sql_stmt->execute()){
-        header("Location: ../HTML/EmployeeHomepage.html");
+        header("Location: EmployeeHomepage.html");
         die();
     } else {
         // If MySQL Query Failed -> Print Error
