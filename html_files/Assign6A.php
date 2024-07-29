@@ -31,3 +31,4 @@ if ($stmt->num_rows > 0) {
 // Close SQL Statement & Connection
 $stmt->close();
 $connection->close();
+?>
