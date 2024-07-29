@@ -4,8 +4,8 @@ $ssn = $_POST['SSN'];
 // Database Information
 $hostname = "localhost";
 $username = "root";
-$password = "Evergreen6167!";
-$dbname = "cs4347_project";
+$password = "";
+$dbname = "online store";
 
 // Setup MySQL Connection
 $connection = new mysqli($hostname, $username, $password, $dbname);
