@@ -29,9 +29,12 @@
 
     if ($result){
         while ($row = $result->fetch_assoc()){
-            printf ("Username: %s -- Password: %s\n",
-            $row["username"], $row["password"]);
+            echo "Username: " . htmlspecialchars($row['username']);
+            echo "Password: " . htmlspecialchars($row['password']);
         }
+    }
+    else{
+        echo "No Employees Found"
     }
     
     $stmt->close();
