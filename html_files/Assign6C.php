@@ -23,7 +23,7 @@
         LEFT JOIN employee e ON ec.employee_ssn = e.employee_ssn
         WHERE e.email = ? AND e.ssn = ?");
 
-    $stmt->bind_param("s", $email, $ssn);
+    $stmt->bind_param("ss", $email, $ssn);
     $stmt->execute();
     $result = $stmt->get_result();
 
