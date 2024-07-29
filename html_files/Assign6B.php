@@ -10,17 +10,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db_password = ""; 
     $dbname = "online store";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $db_username, $db_password, $dbname);
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Update query with potential for SQL injection
-    $sql = "UPDATE employee_credentials ec 
-            JOIN employee e ON ec.employee_ssn = e.employee_ssn 
-            SET ec.password = '$new_password' 
-            WHERE e.employee_ssn = '$employee_ssn' AND e.email = '$email'";
+    // Update query without prepared statements (vulnerable to SQL injection)
+    $sql = "UPDATE employee_credentials 
+            SET password='$new_password' 
+            WHERE username='$username' AND password='$old_password'";
 
     if ($conn->query($sql) === TRUE) {
         echo "Password updated successfully";
