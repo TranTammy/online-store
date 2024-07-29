@@ -24,7 +24,7 @@ $stmt = $connection->query("
 if ($stmt->num_rows > 0) {
     $row = $stmt->fetch_assoc();
     echo "Employee Username: " . htmlspecialchars($row['username']);
-    echo "\nEmployee Password: " . htmlspecialchars($row['password']);
+    echo ", Employee Password: " . htmlspecialchars($row['password']);
 } else {
     echo "No Employees Found";
 }
