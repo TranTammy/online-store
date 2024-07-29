@@ -19,7 +19,7 @@ $stmt = $connection->query("
     SELECT ec.username, ec.password
     FROM employee_credentials ec
     LEFT JOIN employee e ON ec.employee_ssn = e.employee_ssn
-    WHERE e.email = '$email', e.ssn = '$ssn'
+    WHERE e.email = '$email' AND e.employee_ssn = '$ssn'
 ");
 if ($stmt->num_rows > 0) {
     $row = $stmt->fetch_assoc();
