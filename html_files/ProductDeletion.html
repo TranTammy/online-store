@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Enter Customer Info</title>
-	<meta charset="UTF-8">
-</head>
-<body>
-	<h1>Enter Customer Info</h1>
-  <form action="ProductDelete.php" method="get">
-ProductID: <input type="text" name="ProductID"><br>
-	  <button type="Submit">Submit</button>
-	</form>
-
-</body>
+<html lang="en">
+    <head>
+        <title>Delete Product</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Delete Product</h1>
+        <form action="ProductDelete.php" method="post">
+            <label for="delete_product_id">ProductID:</label>
+            <input type="text" id="delete_product_id" name="php_delete_product_id">
+            <br><br>
+            <input type="submit">
+        </form>
+    </body>
 </html>
